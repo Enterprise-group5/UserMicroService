@@ -9,3 +9,4 @@ public interface RoleDAO {
 
     List<Role> getAllRoles();
 }
+
