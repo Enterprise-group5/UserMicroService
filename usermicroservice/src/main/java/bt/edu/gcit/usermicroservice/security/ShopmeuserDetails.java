@@ -44,7 +44,7 @@ public class ShopmeuserDetails implements UserDetails {
     public String getUsername() {
         return user.getEmail();
     }
-
+    
     @Override
     public boolean isAccountNonExpired() {
         return true;

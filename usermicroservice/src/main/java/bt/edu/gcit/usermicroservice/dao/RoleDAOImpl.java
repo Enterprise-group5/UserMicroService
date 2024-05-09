@@ -1,9 +1,12 @@
 package bt.edu.gcit.usermicroservice.dao;
 
-import bt.edu.gcit.usermicroservice.entity.Role;
-import org.springframework.stereotype.Repository;
-import jakarta.persistence.EntityManager;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import bt.edu.gcit.usermicroservice.entity.Role;
+import jakarta.persistence.EntityManager;
 
 @Repository
 public class RoleDAOImpl implements RoleDAO {
@@ -18,5 +21,10 @@ public class RoleDAOImpl implements RoleDAO {
     public void addRole(Role role) {
         // TODO Auto-generated method
         entityManager.persist(role);
+    }
+
+    @Override
+    public List<Role> getAllRoles() {
+        return entityManager.createQuery("SELECT u FROM Role u", Role.class).getResultList();
     }
 }
